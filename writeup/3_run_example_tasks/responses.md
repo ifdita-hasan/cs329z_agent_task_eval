@@ -15,18 +15,18 @@
 
 3. Trace the verification process after the agent finishes: which file does Harbor execute, where do the private tests come from, and how is the final reward communicated back to Harbor?
 
-   Harbor executes `tests/test.sh`. The private tests come from the task's `tests/` folder, which Harbor copies into the container only after the agent finishes. The final reward is communicated by `test.sh` writing it to a reward file, which Harbor reads; in my run, `verifier/reward.txt` contained `1`.
+   Harbor executes `tests/test.sh`. The private tests come from the task's `tests/` folder, which Harbor copies into the container only after the agent finishes. The final reward is communicated by `test.sh` writing it to a reward file, which Harbor reads. In my run, `verifier/reward.txt` contained `1`.
 
 **Problem 4 (`run-example-agent`)**
 
 1. Summarize the agent's approach. Which files and commands did it use?
 
-   The agent read the starter file with `cat /app/humaneval_0.py` (step 3) and listed the folder with `ls -la /app` (step 4). It wrote its own test script at `/tmp/test_has_close_elements.py` (step 5). It then overwrote `/app/humaneval_0.py` with a solution that sorts the list and compares each pair of neighbors (step 6). It checked the solution with `python3 -m doctest` and its test script (step 7), then submitted with `echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT` (step 10).
+   The agent read the starter file with `cat /app/humaneval_0.py` and listed the folder with `ls -la /app`. It wrote its own test script at `/tmp/test_has_close_elements.py`. It then overwrote `/app/humaneval_0.py` with a solution that sorts the list and compares each pair of neighbors. It checked the solution with `python3 -m doctest` and its test script, then submitted with `echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT`.
 
 
 2. Identify one decision in the trajectory that helped or hurt the final result. Cite the relevant step.
 
-   In step 5 the agent decided to write its own tests, including edge cases like an empty list, a single number, and two equal numbers with threshold 0. This helped because in step 7 it could confirm that its solution passed all of them and both docstring examples before submitting.
+   In step 5, the agent decided to write its own tests, including edge cases like an empty list, a single number, and two equal numbers with threshold 0. This helped because in step 7 it could confirm that its solution passed all of them and both docstring examples before submitting.
 
 
 3. Did the verifier reward accurately reflect the quality of the agent's solution? Why or why not?
@@ -39,7 +39,7 @@
 
 1. Summarize the agent's approach. How did it locate the relevant code, and what change did it make?
 
-   The agent located the code with `find . -name "validators.py" | grep auth` (step 3) and read `django/contrib/auth/validators.py` (step 4). It changed the regex in both `ASCIIUsernameValidator` and `UnicodeUsernameValidator` from `r'^[\w.@+-]+$'` to `r'\A[\w.@+-]+\Z'` (step 56). It then ran the auth tests to confirm the fix (steps 60 and 61).
+   The agent located the code with `find . -name "validators.py" | grep auth` in step 3 and read `django/contrib/auth/validators.py` in step 4. It changed the regex in both `ASCIIUsernameValidator` and `UnicodeUsernameValidator` from `r'^[\w.@+-]+$'` to `r'\A[\w.@+-]+\Z'` in step 56. It then ran the auth tests to confirm the fix in steps 60 and 61.
 
 
 2. Identify one point where the agent used repository context that would not exist in a self-contained HumanEval task.
@@ -72,7 +72,7 @@
 
 4. How did the open-ended terminal environment affect the agent's ability to plan, test its assumptions, and recover from mistakes?
 
-   The terminal let the agent test each assumption with a short script before building on it, such as the kink formula in step 13. It also let it recover from mistakes: when `scipy` was missing in step 17, it switched to numpy in step 18. But the terminal did not show what the hidden test would use, so the agent's own checks passed and it still failed.
+   The terminal let the agent plan from what it observed -- it measured that forward() answers about 200,000 queries per second in step 12 before settling on a query-heavy method. It also let it recover from mistakes: when `scipy` was missing in step 17, it switched to numpy in step 18. But the terminal did not show what the hidden test would use, so the agent's own checks passed and it still failed.
 
 ## 3.4 Analyzing Agent Trajectories
 
@@ -86,7 +86,7 @@ How did the agent distribute its effort across activities such as inspecting fil
 
 ![](effort-distribution.png)
 
-This figure measures how the agent split its effort across activities. Each command was assigned to one activity by rule (inspecting files, inspecting git, checking the environment, editing files, running tests, or running its own scripts), and I plotted each activity's share of the task's commands. On SWE-bench, 75% of commands were inspection (47 of 63) and only 2 edited files, so the work was finding and understanding code rather than writing it. On Terminal-Bench, 78% of commands were the agent's own experiments and none ran a test suite, because the task gave it no tests to run.
+This figure measures how the agent split its effort across activities. Each command was assigned to one activity by rule (inspecting files, inspecting git, checking the environment, editing files, running tests, or running its own scripts), and I plotted each activity's share of the task's commands. On SWE-bench, 75% of commands were inspection (47 of 63) and only 2 edited files, so the work was finding and understanding code rather than writing it. On Terminal-Bench, 78% of commands were the agent's own experiments and none ran a test suite, because the task gave it no tests to run. 
 
 ### `bash-command-usage.png`
 
