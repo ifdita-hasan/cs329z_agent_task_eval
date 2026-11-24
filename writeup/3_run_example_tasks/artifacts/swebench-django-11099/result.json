@@ -1,0 +1,39 @@
+{
+    "id": "28631d6b-ff1b-4438-a91c-b73aec2e3d46",
+    "started_at": "2026-11-23T15:03:08.763193",
+    "updated_at": "2026-11-23T15:11:18.643344",
+    "finished_at": "2026-11-23T15:11:18.643344",
+    "n_total_trials": 1,
+    "stats": {
+        "n_completed_trials": 1,
+        "n_errored_trials": 0,
+        "n_running_trials": 0,
+        "n_pending_trials": 0,
+        "n_cancelled_trials": 0,
+        "n_retries": 0,
+        "evals": {
+            "mini-swe-agent__gemini-3.8-flash__adhoc": {
+                "n_trials": 1,
+                "n_errors": 0,
+                "metrics": [
+                    {
+                        "mean": 1.0
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "1.0": [
+                            "django__django-11099__co5isMY"
+                        ]
+                    }
+                },
+                "exception_stats": {}
+            }
+        },
+        "n_input_tokens": 2020786,
+        "n_cache_tokens": 1815151,
+        "n_output_tokens": 30117,
+        "cost_usd": 0.40330132499999993
+    }
+}

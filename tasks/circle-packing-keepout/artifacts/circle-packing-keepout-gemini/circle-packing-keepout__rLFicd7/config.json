@@ -1,0 +1,12 @@
+{
+    "task": {
+        "path": "tasks/circle-packing-keepout"
+    },
+    "trial_name": "circle-packing-keepout__rLFicd7",
+    "trials_dir": "tasks/circle-packing-keepout/artifacts/circle-packing-keepout-gemini",
+    "agent": {
+        "import_path": "pinned_agent:MiniSweAgent",
+        "model_name": "gemini/gemini-3.8-flash"
+    },
+    "job_id": "a3c9846f-ef55-4f5f-819e-85f1bf535bc7"
+}

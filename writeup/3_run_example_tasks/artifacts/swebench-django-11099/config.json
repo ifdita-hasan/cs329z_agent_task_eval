@@ -1,0 +1,20 @@
+{
+    "job_name": "swebench-django-11099",
+    "jobs_dir": "writeup/3_run_example_tasks/artifacts",
+    "n_concurrent_trials": 1,
+    "environment": {
+        "type": "docker",
+        "force_build": true
+    },
+    "agents": [
+        {
+            "import_path": "pinned_agent:MiniSweAgent",
+            "model_name": "gemini/gemini-3.8-flash"
+        }
+    ],
+    "tasks": [
+        {
+            "path": "tasks/django__django-11099"
+        }
+    ]
+}

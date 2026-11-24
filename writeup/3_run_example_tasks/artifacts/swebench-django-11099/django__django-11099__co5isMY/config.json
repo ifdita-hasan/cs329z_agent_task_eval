@@ -1,0 +1,16 @@
+{
+    "task": {
+        "path": "tasks/django__django-11099"
+    },
+    "trial_name": "django__django-11099__co5isMY",
+    "trials_dir": "writeup/3_run_example_tasks/artifacts/swebench-django-11099",
+    "agent": {
+        "import_path": "pinned_agent:MiniSweAgent",
+        "model_name": "gemini/gemini-3.8-flash"
+    },
+    "environment": {
+        "type": "docker",
+        "force_build": true
+    },
+    "job_id": "28631d6b-ff1b-4438-a91c-b73aec2e3d46"
+}

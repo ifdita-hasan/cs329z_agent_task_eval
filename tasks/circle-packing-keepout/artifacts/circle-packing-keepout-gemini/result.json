@@ -1,0 +1,56 @@
+{
+    "id": "a3c9846f-ef55-4f5f-819e-85f1bf535bc7",
+    "started_at": "2026-11-23T19:43:30.482387",
+    "updated_at": "2026-11-23T20:56:17.434910",
+    "finished_at": "2026-11-23T20:56:17.434910",
+    "n_total_trials": 5,
+    "stats": {
+        "n_completed_trials": 5,
+        "n_errored_trials": 4,
+        "n_running_trials": 0,
+        "n_pending_trials": 0,
+        "n_cancelled_trials": 0,
+        "n_retries": 0,
+        "evals": {
+            "mini-swe-agent__gemini-3.8-flash__adhoc": {
+                "n_trials": 5,
+                "n_errors": 4,
+                "metrics": [
+                    {
+                        "mean": 0.2
+                    }
+                ],
+                "pass_at_k": {
+                    "2": 0.3999999999999999,
+                    "4": 0.8,
+                    "5": 1.0
+                },
+                "reward_stats": {
+                    "reward": {
+                        "0.0": [
+                            "circle-packing-keepout__AacBZd3",
+                            "circle-packing-keepout__rLFicd7",
+                            "circle-packing-keepout__ngteDmw",
+                            "circle-packing-keepout__VWu5M53"
+                        ],
+                        "1.0": [
+                            "circle-packing-keepout__9XmgbjK"
+                        ]
+                    }
+                },
+                "exception_stats": {
+                    "AgentTimeoutError": [
+                        "circle-packing-keepout__AacBZd3",
+                        "circle-packing-keepout__rLFicd7",
+                        "circle-packing-keepout__ngteDmw",
+                        "circle-packing-keepout__VWu5M53"
+                    ]
+                }
+            }
+        },
+        "n_input_tokens": 8961613,
+        "n_cache_tokens": 8324692,
+        "n_output_tokens": 272828,
+        "cost_usd": 2.1251476499999997
+    }
+}

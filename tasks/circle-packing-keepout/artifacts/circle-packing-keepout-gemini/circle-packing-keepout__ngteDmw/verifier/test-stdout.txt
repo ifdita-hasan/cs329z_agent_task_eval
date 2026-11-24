@@ -1,0 +1,2 @@
+sum of radii: 2.798940524 (target 2.8)
+REJECTED: valid packing, but the sum of radii is below the target 2.8

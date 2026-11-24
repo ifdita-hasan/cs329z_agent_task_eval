@@ -1,0 +1,2 @@
+sum of radii: 2.802544676 (target 2.8)
+ACCEPTED: valid packing that reaches the target

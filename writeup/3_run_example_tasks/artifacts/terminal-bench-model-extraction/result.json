@@ -1,0 +1,39 @@
+{
+    "id": "3ac7cc35-04f2-4a78-a5e9-ea33c0054f30",
+    "started_at": "2026-11-23T15:20:13.566686",
+    "updated_at": "2026-11-23T15:31:05.595369",
+    "finished_at": "2026-11-23T15:31:05.595369",
+    "n_total_trials": 1,
+    "stats": {
+        "n_completed_trials": 1,
+        "n_errored_trials": 0,
+        "n_running_trials": 0,
+        "n_pending_trials": 0,
+        "n_cancelled_trials": 0,
+        "n_retries": 0,
+        "evals": {
+            "mini-swe-agent__gemini-3.8-flash__adhoc": {
+                "n_trials": 1,
+                "n_errors": 0,
+                "metrics": [
+                    {
+                        "mean": 0.0
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "0.0": [
+                            "model-extraction-relu-logits__ku3waPj"
+                        ]
+                    }
+                },
+                "exception_stats": {}
+            }
+        },
+        "n_input_tokens": 1245629,
+        "n_cache_tokens": 1138291,
+        "n_output_tokens": 57727,
+        "cost_usd": 0.38235157500000005
+    }
+}

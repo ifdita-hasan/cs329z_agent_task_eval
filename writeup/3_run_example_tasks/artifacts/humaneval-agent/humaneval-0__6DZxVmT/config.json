@@ -1,0 +1,12 @@
+{
+    "task": {
+        "path": "tasks/humaneval-0"
+    },
+    "trial_name": "humaneval-0__6DZxVmT",
+    "trials_dir": "writeup/3_run_example_tasks/artifacts/humaneval-agent",
+    "agent": {
+        "import_path": "pinned_agent:MiniSweAgent",
+        "model_name": "gemini/gemini-3.8-flash"
+    },
+    "job_id": "3e65d304-ca9b-490a-9147-24893ecaab7c"
+}

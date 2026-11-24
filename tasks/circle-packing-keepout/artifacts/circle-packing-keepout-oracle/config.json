@@ -1,0 +1,10 @@
+{
+    "job_name": "circle-packing-keepout-oracle",
+    "jobs_dir": "tasks/circle-packing-keepout/artifacts",
+    "n_concurrent_trials": 1,
+    "tasks": [
+        {
+            "path": "tasks/circle-packing-keepout"
+        }
+    ]
+}
